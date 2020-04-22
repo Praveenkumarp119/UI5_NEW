@@ -1,0 +1,111 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "PR.Project",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "PR.Project.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "PR.Project.i18n.i18n"
+				}
+			},
+			"JSON":{
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/project.json"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "PR.Project.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes":  [{
+	         "targetControl": "app",
+	         "pattern":"",
+	         "name": "Split",
+	         "view": "Split",
+	         "targetAggregation": "pages",
+	         "subroutes":[
+	         	{
+	         		"pattern": "",
+	         		"name": "Master",
+	         		"view": "Master",
+	         		"targetControl": "ID_SPLITAPP",
+	         		"targetAggregation": "masterpages"
+	         	},
+	         	{
+	         		"pattern": "detail({cpath})",
+	         		"name": "Details",
+	         		"view": "Details",
+	         		"targetControl": "ID_SPLITAPP",
+	         		"targetAggregation": "detailpages"
+	         	}
+	         	]
+	         }
+			]
+		}
+	}
+}
+
+
+

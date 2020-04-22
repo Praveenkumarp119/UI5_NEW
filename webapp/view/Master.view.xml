@@ -1,0 +1,13 @@
+<mvc:View controllerName="PR.Project.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App >
+			<pages>
+				<Page id="page" title="master">
+					<content>
+					<Text text="Welcome"></Text>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
